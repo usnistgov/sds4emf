@@ -1,17 +1,17 @@
 package emf.sds;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.emfjson.jackson.resource.JsonResourceFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public abstract class AbstractSerializeDeserialize {
 
-	static Logger log = LoggerFactory.getLogger(AbstractSerializeDeserialize.class);
+	static Logger log = LogManager.getLogger(AbstractSerializeDeserialize.class);
 
 	protected static final ResourceSet resourceSet = new ResourceSetImpl();
 	protected static Resource resource;
@@ -30,5 +30,13 @@ public abstract class AbstractSerializeDeserialize {
 
 	public static Resource getResource() {
 		return resource;
+	}
+	
+	public static void associateExtension(String extension, Object obj) {
+		getResourceSet().getResourceFactoryRegistry().getExtensionToFactoryMap().put(extension, obj);
+	}
+	
+	public static void associateScheme(String scheme, Object obj) {
+		getResourceSet().getResourceFactoryRegistry().getProtocolToFactoryMap().put(scheme, obj);
 	}
 }

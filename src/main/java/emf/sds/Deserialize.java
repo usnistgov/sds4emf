@@ -8,15 +8,15 @@ import java.nio.charset.Charset;
 import java.util.Collections;
 
 import org.apache.commons.io.input.ReaderInputStream;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class Deserialize extends AbstractSerializeDeserialize {
 
-	private static final Logger log = LoggerFactory.getLogger(Deserialize.class);
+	private static final Logger log = LogManager.getLogger(Deserialize.class);
 
 	public static EObject it(String fileName) {
 		init();
