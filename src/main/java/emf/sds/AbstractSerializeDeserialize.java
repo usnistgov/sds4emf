@@ -39,4 +39,8 @@ public abstract class AbstractSerializeDeserialize {
 	public static void associateScheme(String scheme, Object obj) {
 		getResourceSet().getResourceFactoryRegistry().getProtocolToFactoryMap().put(scheme, obj);
 	}
+	
+	public static void registerPackage(String packageURI, Object packageImpl) {
+		getResourceSet().getPackageRegistry().put(packageURI, packageImpl);
+	}
 }
