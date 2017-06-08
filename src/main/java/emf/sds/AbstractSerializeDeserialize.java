@@ -19,8 +19,6 @@ public abstract class AbstractSerializeDeserialize {
 	protected static void init() {
 		log.trace("AbstractSerializeDeserialize==>" + resourceSet);
 		resourceSet.getPackageRegistry().put(EcorePackage.eNS_URI, EcorePackage.eINSTANCE);
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xml", new XMLResourceFactoryImpl());
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("json", new JsonResourceFactory());
 		log.trace("<==AbstractSerializeDeserialize");
 	}
 	
