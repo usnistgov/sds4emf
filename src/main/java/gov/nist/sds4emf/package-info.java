@@ -5,4 +5,4 @@
  * @author gcr1
  *
  */
-package emf.sds;
+package gov.nist.sds4emf;

@@ -1,4 +1,4 @@
-package emf.sds;
+package gov.nist.sds4emf;
 
 import java.io.File;
 import java.io.IOException;
